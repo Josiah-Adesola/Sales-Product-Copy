@@ -1,18 +1,20 @@
 import os
 import openai
 import streamlit as st
+import config
 
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+# openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def main():
-    st.title("Product Description Generator")
+    st.title("Product Sales Copy Generator")
     st.image("product.jpg")
-    notes = st.text_area("Enter a product information:")
-    if st.button("Generate Description"):
+    notes = st.text_area("Enter a short product description:")
+    
+    if st.button("Generate sales copy"):
         with st.spinner("Generating description..."):
             response = openai.Completion.create(
             model="text-davinci-003",
-            prompt=f"Write a production description based on the below information:\n\nProduct: {notes}",
+            prompt=f"Write a compelling sales copy for social media users with short headline, subheadline, bulleted points, each point on separate lines, and call to action, based on the below information:\n\nProduct: {notes}",
             temperature=0.8,
             max_tokens=503,
             top_p=1,

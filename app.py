@@ -3,7 +3,7 @@ import openai
 import streamlit as st
 import config
 
-openai.api_key = config.openai.
+openai.api_key = config.openai.api_key
 def main():
     st.title("Product Sales Copy Generator")
     st.image("product.jpg")

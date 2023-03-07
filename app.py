@@ -1,9 +1,9 @@
 import os
 import openai
 import streamlit as st
-import config
 
-openai.api_key = config.openai.api_key
+openai.api_key = st.secrets["api_key"]
+
 def main():
     st.title("Product Sales Copy Generator")
     st.image("product.jpg")

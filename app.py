@@ -5,7 +5,7 @@ import streamlit as st
 openai.api_key = st.secrets["api_key"]
 
 def main():
-    st.title("Product Sales Copy Generator")
+    st.title("Salesy - The Product Copy Assistant")
     st.image("product.jpg")
     notes = st.text_area("Enter a short product description:")
     
